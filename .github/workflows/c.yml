@@ -1,0 +1,18 @@
+name: ST
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+    - name: Upload st binary
+      uses: actions/upload-artifact@v1
+      with:
+        name: upload_st
+        path: st
+
